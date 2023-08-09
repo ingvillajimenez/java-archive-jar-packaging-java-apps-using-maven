@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="my-maven-jar" />
+        <module name="java-archives" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="my-maven-jar" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>
