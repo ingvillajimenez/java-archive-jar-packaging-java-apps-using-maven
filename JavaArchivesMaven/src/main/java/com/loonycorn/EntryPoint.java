@@ -39,3 +39,6 @@ public class EntryPoint {
 
 // Invalidating the IntelliJ cache
 // File -> Invalidate Caches / Restart
+
+// Maven Assembly Plugin:
+// http://maven.apache.org/plugins/maven-assembly-plugin/usage.html

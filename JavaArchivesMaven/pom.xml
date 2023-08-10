@@ -7,7 +7,6 @@
     <groupId>com.loonycorn</groupId>
     <artifactId>java-archives</artifactId>
     <version>1.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>JavaArchivesMaven</name>
     <description>Playing with Java Archives</description>
@@ -47,22 +46,33 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <configuration>
-                        <archive>
-                            <manifest>
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>libs/</classpathPrefix>
-                                <mainClass>
-                                    com.loonycorn.EntryPoint
-                                </mainClass>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.loonycorn.EntryPoint</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
