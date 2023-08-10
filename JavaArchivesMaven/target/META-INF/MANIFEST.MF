@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.3.0
+Build-Jdk-Spec: 13
+Class-Path: log4j-api-2.20.0.jar log4j-core-2.20.0.jar
+Main-Class: com.loonycorn.EntryPoint
+
